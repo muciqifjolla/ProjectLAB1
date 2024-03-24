@@ -111,50 +111,50 @@ CREATE TABLE Insurance (
 
 
 --==========================================================
---Tabela BILL
+--Tabela BILL u ekzekutua
 
---CREATE TABLE BILL (
---    Payment_ID INT PRIMARY KEY NOT NULL,
---    Date DATE NOT NULL,
---    Room_cost DECIMAL(10, 2),
---    Other_charges DECIMAL(10, 2),
---    M_Cost DECIMAL(10, 2),
---    Total DECIMAL(10, 2) NOT NULL,
---    Patient_ID INT NOT NULL,
---	Room_ID INT NOT NULL,
---	Medicine_ID INT NOT NULL,
---    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID),
---    FOREIGN KEY (Room_ID) REFERENCES Room(Room_ID),
---    FOREIGN KEY (Medicine_ID) REFERENCES Medicine(Medicine_ID)
---);
+CREATE TABLE BILL (
+   Payment_ID INT PRIMARY KEY NOT NULL,
+   Date DATE NOT NULL,
+   Room_cost DECIMAL(10, 2),
+   Other_charges DECIMAL(10, 2),
+   M_Cost DECIMAL(10, 2),
+   Total DECIMAL(10, 2) NOT NULL,
+   Patient_ID INT NOT NULL,
+	Room_ID INT NOT NULL,
+	Medicine_ID INT NOT NULL,
+   FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID),
+   FOREIGN KEY (Room_ID) REFERENCES Room(Room_ID),
+   FOREIGN KEY (Medicine_ID) REFERENCES Medicine(Medicine_ID)
+);
 --===========================================================
---tabela Prescription 
+--tabela Prescription u ekzekutua
 
---CREATE TABLE Prescription (
---    Prescription_ID INT PRIMARY KEY NOT NULL,
---    Patient_ID INT NOT NULL,
---   Date DATE NOT NULL,
---    Dosage VARCHAR(100) NOT NULL,
---    Doctor_ID INT NOT NULL,
---    Medicine_ID INT NOT NULL,
---    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID),
---    FOREIGN KEY (Doctor_ID) REFERENCES Doctor(Doctor_ID),
---    FOREIGN KEY (Medicine_ID) REFERENCES Medicine(Medicine_ID)
---);
+CREATE TABLE Prescription (
+   Prescription_ID INT PRIMARY KEY NOT NULL,
+   Patient_ID INT NOT NULL,
+  Date DATE NOT NULL,
+   Dosage VARCHAR(100) NOT NULL,
+   Doctor_ID INT NOT NULL,
+   Medicine_ID INT NOT NULL,
+   FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID),
+   FOREIGN KEY (Doctor_ID) REFERENCES Doctor(Doctor_ID),
+   FOREIGN KEY (Medicine_ID) REFERENCES Medicine(Medicine_ID)
+);
 
 --=====================================================================
---tabela Appointment
+--tabela Appointment u ekzekutua
 
---CREATE TABLE Appointment (
---    Appoint_ID INT PRIMARY KEY NOT NULL,
---    Scheduled_On DATE NOT NULL,
---    Date DATE NOT NULL,
---    Time TIME NOT NULL,
---    Doctor_ID INT NOT NULL,
---    Patient_ID INT NOT NULL,
---    FOREIGN KEY (Doctor_ID) REFERENCES Doctor(Doctor_ID),
---    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID)
---);
+CREATE TABLE Appointment (
+   Appoint_ID INT PRIMARY KEY NOT NULL,
+   Scheduled_On DATE NOT NULL,
+   Date DATE NOT NULL,
+   Time TIME NOT NULL,
+   Doctor_ID INT NOT NULL,
+   Patient_ID INT NOT NULL,
+   FOREIGN KEY (Doctor_ID) REFERENCES Doctor(Doctor_ID),
+   FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID)
+);
 
 
 
