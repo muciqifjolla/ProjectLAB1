@@ -161,51 +161,50 @@ CREATE TABLE Appointment (
 --=========================================================================
 --Tabela Payroll
 
---CREATE TABLE Payroll (
---    Account_no INT PRIMARY KEY,
---    Salary DECIMAL(10, 2) NOT NULL,
---    Bonus DECIMAL(10, 2),
---    Emp_ID INT NOT NULL,
---    IBAN VARCHAR(50),
---    FOREIGN KEY (Emp_ID) REFERENCES Staff(Emp_ID)
---);
+CREATE TABLE Payroll (
+    Account_no INT PRIMARY KEY,
+    Salary DECIMAL(10, 2) NOT NULL,
+    Bonus DECIMAL(10, 2),
+    Emp_ID INT NOT NULL,
+    IBAN VARCHAR(50),
+    FOREIGN KEY (Emp_ID) REFERENCES Staff(Emp_ID)
+);
 
 
 -- =====================================================
 --Tabela Emergency_contact
 
---CREATE TABLE Emergency_contact (
---    Contact_ID INT PRIMARY KEY,
---    Contact_Name VARCHAR(100) NOT NULL,
---    Phone VARCHAR(20) NOT NULL,
---    Relation VARCHAR(50) NOT NULL,
---    Patient_ID INT NOT NULL,
---    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID)
---);
+CREATE TABLE Emergency_contact (
+    Contact_ID INT PRIMARY KEY,
+    Contact_Name VARCHAR(100) NOT NULL,
+    Phone VARCHAR(20) NOT NULL,
+    Relation VARCHAR(50) NOT NULL,
+    Patient_ID INT NOT NULL,
+    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID)
+);
 
 
 --==================================
 --Tablea Medical History
 
---CREATE TABLE Medical_History (
---    Record_ID INT PRIMARY KEY,
---    Patient_ID INT NOT NULL,
---    Allergies VARCHAR(255),
---    Pre_Conditions VARCHAR(255),
---    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID)
---);
+CREATE TABLE Medical_History (
+    Record_ID INT PRIMARY KEY,
+    Patient_ID INT NOT NULL,
+    Allergies VARCHAR(255),
+    Pre_Conditions VARCHAR(255),
+    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID)
+);
 
 
 --======================================
---tabela Lab Screeining  u ekzekutua
-
---CREATE TABLE Lab_Screening (
---    Lab_ID INT PRIMARY KEY,
---   Patient_ID INT NOT NULL,
---    Technician_ID INT,
---    Doctor_ID INT,
---    Test_Cost DECIMAL(10, 2),
---    Date DATE,
---    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID),
---    FOREIGN KEY (Doctor_ID) REFERENCES Doctor(Doctor_ID)
---);
+--tabela Lab Screeining 
+CREATE TABLE Lab_Screening (
+    Lab_ID INT PRIMARY KEY,
+    Patient_ID INT NOT NULL,
+    Technician_ID INT,
+    Doctor_ID INT,
+    Test_Cost DECIMAL(10, 2),
+    Date DATE,
+    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID),
+    FOREIGN KEY (Doctor_ID) REFERENCES Doctor(Doctor_ID)
+);
