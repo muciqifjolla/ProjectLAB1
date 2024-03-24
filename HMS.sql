@@ -58,37 +58,37 @@ CREATE TABLE Doctor (
 );
 
 --============================
---Tabela Nurse
+--Tabela Nurse u ekzekutua 
 
---CREATE TABLE Nurse (
---    Nurse_ID INT PRIMARY KEY NOT NULL,
---    Patient_ID INT NOT NULL,
---    Emp_ID INT NOT NULL,
---    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID),
---    FOREIGN KEY (Emp_ID) REFERENCES Staff(Emp_ID)
---);
+CREATE TABLE Nurse (
+    Nurse_ID INT PRIMARY KEY NOT NULL,
+    Patient_ID INT NOT NULL,
+    Emp_ID INT NOT NULL,
+    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID),
+    FOREIGN KEY (Emp_ID) REFERENCES Staff(Emp_ID)
+);
 
 -----=============================
---tabela Room
+--tabela Room u ekzekutua 
 
---CREATE TABLE Room (
---    Room_ID INT PRIMARY KEY not null,
---    Room_type VARCHAR(20) NOT NULL,
---    Patient_ID INT,
---    Room_cost DECIMAL(10, 2),
---    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID)
---);
+CREATE TABLE Room (
+    Room_ID INT PRIMARY KEY not null,
+    Room_type VARCHAR(20) NOT NULL,
+    Patient_ID INT,
+    Room_cost DECIMAL(10, 2),
+    FOREIGN KEY (Patient_ID) REFERENCES Patient(Patient_ID)
+);
 
 --===================================================
 
---Tabela Medicine 
+--Tabela Medicine u ekzekutua
 
---CREATE TABLE Medicine (
---    Medicine_ID INT PRIMARY KEY NOT NULL,
---    M_name VARCHAR(100) NOT NULL,
---    M_Quantity INT NOT NULL,
---    M_Cost DECIMAL(10, 2) NOT NULL
---);
+CREATE TABLE Medicine (
+    Medicine_ID INT PRIMARY KEY NOT NULL,
+    M_name VARCHAR(100) NOT NULL,
+    M_Quantity INT NOT NULL,
+    M_Cost DECIMAL(10, 2) NOT NULL
+);
 
 
 --========================================
